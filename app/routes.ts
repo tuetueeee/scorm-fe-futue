@@ -10,5 +10,6 @@ export default [
   route('/library', 'routes/library.tsx'),
   route('/organization', 'routes/organizations.tsx'),
   route('/organizations/:orgId', 'routes/organization-detail.tsx'),
-  route('/organizations/:orgId/resources/folders/:folderId', 'routes/organization-shared-folder.tsx')
+  route('/organizations/:orgId/resources/folders/:folderId', 'routes/organization-shared-folder.tsx'),
+  route('/profile', 'routes/profile.tsx')
 ] satisfies RouteConfig
