@@ -232,3 +232,27 @@ export const notificationApi = {
   // Đánh dấu tất cả thông báo là đã đọc
   markAllAsRead: () => api.patch('/notifications/read-all')
 }
+
+// --- User APIs ---
+export type UserProfile = {
+  userId: number
+  fname: string
+  minit?: string
+  lname: string
+  email: string
+  avatarUrl: string | null
+}
+
+export type UpdateProfilePayload = {
+  fname: string
+  lname: string
+  avatarUrl?: string | null
+}
+
+export const userApi = {
+  // Lấy thông tin user đang đăng nhập
+  getCurrentUser: () => api.get<UserProfile>('/users/me'),
+
+  // Cập nhật thông tin profile
+  updateProfile: (payload: UpdateProfilePayload) => api.put<UserProfile>('/users/me', payload)
+}
